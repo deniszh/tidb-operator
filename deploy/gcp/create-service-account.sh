@@ -15,12 +15,12 @@ fi
 
 gcloud iam service-accounts create --display-name terraform terraform
 email="terraform@${PROJECT}.iam.gserviceaccount.com"
-gcloud projects add-iam-policy-binding "$PROJECT" --member "$email" --role roles/container.clusterAdmin
-gcloud projects add-iam-policy-binding "$PROJECT" --member "$email" --role roles/compute.networkAdmin
-gcloud projects add-iam-policy-binding "$PROJECT" --member "$email" --role roles/compute.viewer
-gcloud projects add-iam-policy-binding "$PROJECT" --member "$email" --role roles/compute.securityAdmin
-gcloud projects add-iam-policy-binding "$PROJECT" --member "$email" --role roles/iam.serviceAccountUser
-gcloud projects add-iam-policy-binding "$PROJECT" --member "$email" --role roles/compute.instanceAdmin.v1
+gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$email" --role roles/container.clusterAdmin
+gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$email" --role roles/compute.networkAdmin
+gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$email" --role roles/compute.viewer
+gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$email" --role roles/compute.securityAdmin
+gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$email" --role roles/iam.serviceAccountUser
+gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$email" --role roles/compute.instanceAdmin.v1
 
 mkdir -p credentials
 gcloud iam service-accounts keys create credentials/terraform-key.json --iam-account "$email"
