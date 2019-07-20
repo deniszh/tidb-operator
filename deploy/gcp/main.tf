@@ -253,6 +253,20 @@ resource "google_compute_firewall" "allow_ssh_bastion" {
   target_tags   = ["bastion"]
 }
 
+resource "google_compute_firewall" "allow_ssh_ebay_ams_vpn" {
+  name    = "allow-ssh-ebay-ams-vpn"
+  network = google_compute_network.vpc_network.self_link
+  project = var.GCP_PROJECT
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["93.94.41.0/24"]
+  target_tags = ["tidb", "tikv", "pd", "monitor"]
+}
+
 resource "google_compute_firewall" "allow_mysql_from_bastion" {
   name    = "allow-mysql-from-bastion"
   network = google_compute_network.vpc_network.self_link
