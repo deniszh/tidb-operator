@@ -45,7 +45,7 @@ discovery:
 # This feature is only available in tidb-operator v1.0 or higher.
 # Note: Switch this variable against an existing cluster will cause an rolling-update of each component even
 # if the ConfigMap was not changed.
-enableConfigMapRollout: false
+enableConfigMapRollout: true
 
 pd:
   # Please refer to https://github.com/pingcap/pd/blob/master/conf/config.toml for the default
@@ -201,6 +201,11 @@ tikv:
   # [storage.block-cache]
   # ## Size of the shared block cache. Normally it should be tuned to 30%-50% of container's total memory.
   # # capacity = "1GB"
+  # [raftstore]
+  # ## true (default value) for high reliability, this can prevent data loss when power failure.
+  # # sync-log = true
+  # # apply-pool-size = 2
+  # # store-pool-size = 2
 
   replicas: 3
   image: pingcap/tikv:v3.0.1
