@@ -63,3 +63,7 @@ variable "bastion_instance_type" {
   default = "f1-micro"
 }
 
+variable "ingress_networks" {
+  type    = list(string)
+  default = ["127.0.0.1/8"]
+}
