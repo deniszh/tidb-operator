@@ -301,6 +301,7 @@ resource "google_compute_instance" "bastion" {
   zone         = data.google_compute_zones.available.names[0]
   machine_type = var.bastion_instance_type
   name         = "bastion"
+  allow_stopping_for_update = true
 
   boot_disk {
     initialize_params {

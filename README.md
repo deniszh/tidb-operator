@@ -1,3 +1,6 @@
+# Go to [deply/gcp] for further instructions
+
+
 # TiDB Operator
 
 - [**Stack Overflow**](https://stackoverflow.com/questions/tagged/tidb)

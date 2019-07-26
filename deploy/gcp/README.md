@@ -1,3 +1,23 @@
+# Internal fork
+
+Internal fork of https://github.com/pingcap/tidb-operator/tree/master/deploy/gcp
+
+
+1. Edit `terraform.tfvars` if needed
+
+2. Edit ``variables.tf`` if needed
+
+2. Run `./create-service-account.sh` once
+
+3. Run `terraform init` once
+
+4. `terraform apply`
+
+How to make DC emulation
+
+kubectl label node <nodeName> region=<regionName> zone=<zoneName> rack=<rackName> kubernetes.io/hostname=<hostName>
+
+
 # Deploy TiDB Operator and TiDB cluster on GCP GKE
 
 This document describes how to deploy TiDB Operator and a TiDB cluster on GCP GKE with your laptop (Linux or macOS) for development or testing.
