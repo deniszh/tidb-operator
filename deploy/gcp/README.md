@@ -13,9 +13,12 @@ Internal fork of https://github.com/pingcap/tidb-operator/tree/master/deploy/gcp
 
 4. `terraform apply`
 
+5. ssh to bastion, install additional software
+
 How to make DC emulation
 
-kubectl label node <nodeName> region=<regionName> zone=<zoneName> rack=<rackName> kubernetes.io/hostname=<hostName>
+
+kubectl label node <nodeName> zone=<zoneName> kubernetes.io/hostname=<hostName>
 
 
 # Deploy TiDB Operator and TiDB cluster on GCP GKE

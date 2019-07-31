@@ -19,30 +19,30 @@ variable "tidb_operator_registry" {
 }
 
 variable "pd_replica_count" {
-  default = 3
+  default = 5
 }
 
 variable "tikv_replica_count" {
-  default = 3
+  default = 6
 }
 
 variable "tidb_replica_count" {
-  default = 3
+  default = 6
 }
 
 variable "pd_count" {
   description = "Number of PD nodes per availability zone"
-  default     = 1
+  default     = 2
 }
 
 variable "tikv_count" {
   description = "Number of TiKV nodes per availability zone"
-  default     = 1
+  default     = 2
 }
 
 variable "tidb_count" {
   description = "Number of TiDB nodes per availability zone"
-  default     = 1
+  default     = 2
 }
 
 variable "monitor_count" {

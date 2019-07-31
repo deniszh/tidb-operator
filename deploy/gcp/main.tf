@@ -133,6 +133,7 @@ resource "google_container_node_pool" "pd_pool" {
 
   node_config {
     machine_type    = var.pd_instance_type
+    image_type   = "UBUNTU"
     local_ssd_count = 0
 
     taint {
@@ -202,6 +203,7 @@ resource "google_container_node_pool" "tidb_pool" {
 
   node_config {
     machine_type = var.tidb_instance_type
+    image_type   = "UBUNTU"
 
     taint {
       effect = "NO_SCHEDULE"
